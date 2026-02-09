@@ -1,8 +1,8 @@
-# Deployment Setup Guide
+## End to End MAchine Learning Project
 
-1. Docker Build checked  
-2. Github Workflow  
-3. IAM User In AWS  
+1. Docker Build checked
+2. Github Workflow
+3. Iam User In AWS
 
 ## Docker Setup In EC2 commands to be Executed
 
@@ -31,11 +31,7 @@ images/containers/volumes before the pull step (the workflow now does this autom
 
 ```
 docker system prune -af --volumes
-docker builder prune -af
 ```
-If you still see disk errors after pruning, increase the EC2 volume size and extend the
-filesystem so the runner has more free space.
-
 ## Setup github secrets:
 Make sure the AWS region matches your ECR registry's region.
 
@@ -43,9 +39,8 @@ AWS_ACCESS_KEY_ID=
 
 AWS_SECRET_ACCESS_KEY=
 
-AWS_REGION=ap-south-1
+AWS_REGION = ap-south-1
 
-AWS_ECR_LOGIN_URI=566373416292.dkr.ecr.ap-south-1.amazonaws.com
+AWS_ECR_LOGIN_URI = 566373416292.dkr.ecr.ap-south-1.amazonaws.com
 
-ECR_REPOSITORY_NAME=student_performance_report
-
+ECR_REPOSITORY_NAME = student_performance_report

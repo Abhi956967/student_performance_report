@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Build and Deploy to EC2 via ECR
 
 on:
   push:
@@ -24,8 +24,7 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build, tag, and push image to Amazon ECR
-        id: build-image
+      - name: Build, tag, and push docker image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
@@ -61,15 +60,9 @@ jobs:
             docker rm -fv mltest
           fi
 
-      - name: Show disk usage before cleanup
-        run: |
-          df -h
-          docker system df || true
-
       - name: Clean previous images and containers
         run: |
           docker system prune -af --volumes
-          docker builder prune -af
 
       - name: Pull latest image
         env:
