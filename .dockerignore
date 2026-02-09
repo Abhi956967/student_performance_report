@@ -1,0 +1,10 @@
+.git
+.github
+.vscode
+artifacts
+notebook
+logs
+__pycache__
+*.pyc
+.pytest_cache
+*.ipynb
