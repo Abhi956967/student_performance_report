@@ -25,6 +25,10 @@ newgrp docker
 ## Configure EC2 as self-hosted runner:
 Register a self-hosted runner in this repo and ensure it stays online during deployments.
 
+## Fix "no space left on device" during deployment
+If the self-hosted runner runs out of disk space while pulling the image, prune old Docker
+images/containers/volumes before the pull step (the workflow now does this automatically):
+
 ## Setup github secrets:
 Make sure the AWS region matches your ECR registry's region.
 
