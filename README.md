@@ -109,6 +109,18 @@ python src/pipeline/training_pipeline.py
 python app.py
 http://127.0.0.1:5000
 
+🧰 Troubleshooting
+
+Docker pull fails with "no space left on device"
+- Root cause: the Docker host ran out of disk space while extracting image layers.
+- Fix options:
+  - Clean unused Docker data:
+    - docker system df
+    - docker system prune -a
+    - docker volume prune
+  - Free disk space on the host (remove old builds/logs).
+  - If using Docker Desktop, increase the disk image size in Settings → Resources.
+
 ☁️ Deploy to AWS Elastic Beanstalk
 
 🔐 Prerequisites
