@@ -1,0 +1,12 @@
+<h1>CSV Batch Prediction</h1>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file" required>
+<button>Upload</button>
+</form>
+
+{% if table %}
+{{table|safe}}
+
+<a href="/download_pdf/{{download}}">Download PDF</a>
+{% endif %}

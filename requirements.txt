@@ -6,3 +6,7 @@ scikit-learn
 catboost
 xgboost
 Flask
+boto3
+flask-login
+werkzeug
+reportlab
