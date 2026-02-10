@@ -1,3 +1,6 @@
+
+![logo](https://github.com/Abhi956967/student_performance_report/blob/main/student%20performance.png)
+
 ## End to End MAchine Learning Project
 
 1. Docker Build checked
